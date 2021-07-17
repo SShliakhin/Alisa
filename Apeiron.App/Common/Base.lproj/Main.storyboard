@@ -5,10 +5,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Пушкин в Москве-->
+        <!--Съёмки в Москве-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MoscowViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MoscowViewController" customModule="Apeiron_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,17 +30,67 @@
                             <constraint firstItem="eLe-H5-W9E" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="eCM-sw-TQ2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Пушкин в Москве" largeTitleDisplayMode="always" id="yWg-rh-y5W">
+                    <navigationItem key="navigationItem" title="Съёмки в Москве" largeTitleDisplayMode="always" id="yWg-rh-y5W">
                         <barButtonItem key="backBarButtonItem" title="Москва" id="QVw-tc-inp"/>
                     </navigationItem>
                     <connections>
                         <outlet property="moscowMapView" destination="eLe-H5-W9E" id="CCi-rE-Lcc"/>
                         <segue destination="Omf-fm-tMj" kind="show" identifier="ARSegue" id="znA-ou-tN1"/>
+                        <segue destination="eiv-QD-HJY" kind="show" identifier="ImageSegue" id="OsB-YC-jeR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1633" y="12"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="C7b-jv-kNV">
+            <objects>
+                <viewController id="eiv-QD-HJY" customClass="ImageViewController" customModule="Apeiron_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJ3-LL-QdI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WG9-hL-JaI">
+                                <rect key="frame" x="0.0" y="77.5" width="375" height="589.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="orE-og-9Th" appends="YES" id="8Ac-Wy-Eog"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-2c-qh0">
+                                <rect key="frame" x="0.0" y="44" width="375" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JD0-7y-8E1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WG9-hL-JaI" firstAttribute="leading" secondItem="JD0-7y-8E1" secondAttribute="leading" id="7EF-OD-KPf"/>
+                            <constraint firstItem="g1e-2c-qh0" firstAttribute="leading" secondItem="JD0-7y-8E1" secondAttribute="leading" id="7XY-3p-NaC"/>
+                            <constraint firstItem="g1e-2c-qh0" firstAttribute="top" secondItem="JD0-7y-8E1" secondAttribute="top" id="GUk-dl-HuY"/>
+                            <constraint firstItem="JD0-7y-8E1" firstAttribute="trailing" secondItem="g1e-2c-qh0" secondAttribute="trailing" id="XtA-e1-KKC"/>
+                            <constraint firstItem="WG9-hL-JaI" firstAttribute="top" secondItem="g1e-2c-qh0" secondAttribute="bottom" id="iGn-ax-vaa"/>
+                            <constraint firstItem="JD0-7y-8E1" firstAttribute="trailing" secondItem="WG9-hL-JaI" secondAttribute="trailing" id="kKM-az-vbB"/>
+                            <constraint firstItem="JD0-7y-8E1" firstAttribute="bottom" secondItem="WG9-hL-JaI" secondAttribute="bottom" id="uwh-6s-tcc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ArR-jo-lUd"/>
+                    <connections>
+                        <outlet property="imageView" destination="WG9-hL-JaI" id="Q5h-Uw-hCd"/>
+                        <outlet property="label" destination="g1e-2c-qh0" id="sR7-Md-jVB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqc-Ef-9Ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="orE-og-9Th">
+                    <connections>
+                        <action selector="userTapped:" destination="eiv-QD-HJY" id="CcJ-He-AoA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2505" y="379"/>
         </scene>
         <!--Найдите книгу-->
         <scene sceneID="1lv-aO-Y7s">
@@ -93,9 +144,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYV-va-5sO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="11"/>
+            <point key="canvasLocation" x="2506" y="-280"/>
         </scene>
-        <!--Пушкин в России-->
+        <!--Места съемок "Гостья из будущего"-->
         <scene sceneID="axE-z0-xbC">
             <objects>
                 <viewController storyboardIdentifier="RussiaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G9b-mT-vZM" customClass="CountryViewController" customModule="Apeiron_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,7 +167,7 @@
                             <constraint firstItem="2DN-MV-a4q" firstAttribute="leading" secondItem="Tu0-Xb-hqc" secondAttribute="leading" id="phs-hq-boa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Пушкин в России" id="5f7-e7-16d">
+                    <navigationItem key="navigationItem" title="Места съемок &quot;Гостья из будущего&quot;" id="5f7-e7-16d">
                         <barButtonItem key="backBarButtonItem" title="Россия" id="znE-PX-ZGd"/>
                     </navigationItem>
                     <connections>
@@ -147,4 +198,9 @@
             <point key="canvasLocation" x="-38" y="13"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

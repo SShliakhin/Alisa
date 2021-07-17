@@ -16,7 +16,7 @@ class CountryViewController: MapViewController {
     
     // The main navigation title
     override var navigationTitle: String {
-        return "Основной экран"
+        return "Места съемок \"Гостья из будущего\""
     }
     
     /// Called when the map view has been loaded

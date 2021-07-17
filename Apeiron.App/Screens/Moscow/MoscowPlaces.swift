@@ -11,15 +11,21 @@ import CoreLocation
 /// Places in Moscow which should be pinned on the map
 let moscowPlaces: [Place] = [
     Place(
-        action: .openURL("https://yandex.ru/maps/213/moscow/?l=stv%2Csta&ll=37.588244%2C55.744421&mode=usermaps&panorama%5Bdirection%5D=2.360562%2C-2.813145&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=37.591560%2C55.742731&panorama%5Bspan%5D=69.564342%2C60.000000&um=mymaps%3Awx_1jxFRH5cZ32wAHlBIvA-pzSF0VJTH&z=17"),
+        action: .image("04.26.33", "Здесь ребята встретили Алису"),
         address: "Москва, Чистый переулок, д. №6",
-        coordinate: CLLocationCoordinate2D(latitude: 55.744421, longitude: 37.588244),
+        coordinate: CLLocationCoordinate2D(latitude: 55.742731, longitude: 37.591560),
         title: "Здесь ребята встретили Алису"
+    ),
+    Place(
+        action: .image("03.24.23", "Девочки убегают от Весельчака."),
+        address: "1Вид с Гоголевского бульвара на площадь Пречистенские ворота (Кропоткинские ворота).",
+        coordinate: CLLocationCoordinate2D(latitude: 55.744735, longitude: 37.601314),
+        title: "Девочки убегают от Весельчака."
     ),
     Place(
         action: .openURL("https://yandex.ru/maps/213/moscow/?l=stv%2Csta&ll=37.589474%2C55.750176&mode=usermaps&panorama%5Bdirection%5D=171.332980%2C3.691634&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=37.601438%2C55.743674&panorama%5Bspan%5D=69.564342%2C60.000000&um=mymaps%3Awx_1jxFRH5cZ32wAHlBIvA-pzSF0VJTH&z=15"),
         address: "Москва, Угол ул. Остоженки (Метростроевской) и 1-го Обыденского переулка (ул.Крыленко)",
-        coordinate: CLLocationCoordinate2D(latitude: 55.75017, longitude: 37.589474),
+        coordinate: CLLocationCoordinate2D(latitude: 55.743674, longitude: 37.601438),
         title: "Магазин \"Молоко\". Здесь Коля прятался от пиратов."
     ),
 ]
