@@ -29,8 +29,5 @@ class CountryViewController: MapViewController {
         
         // perform parent's viewDidLoad()
         super.viewDidLoad()
-        
-        // fetch assignments in advance so AR reference images can pre-load
-        Assignment.load()
     }
 }

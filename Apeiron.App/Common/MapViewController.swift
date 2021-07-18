@@ -23,9 +23,6 @@ class MapViewController: UIViewController {
         return "Default"
     }
     
-    /// True when already selected annotation (pin) is touched again
-    var secondTouch = false
-    
     /// Called when the map view has been loaded
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +63,6 @@ class MapViewController: UIViewController {
         for annotation in mapView.selectedAnnotations {
             mapView.deselectAnnotation(annotation, animated: true)
         }
-        
-        // no pin is selected — do not expect second touch yet
-        secondTouch = false
         
         // to find South West and North East coordinates start with the first element
         var southWest = places.first!.coordinate

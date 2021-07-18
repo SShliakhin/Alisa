@@ -18,9 +18,6 @@ extension MapViewController: MKMapViewDelegate {
     ///   - mapView: map view with the pin
     ///   - view: annotation (pin) view tapped
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        // this pin is just selected, next touch is not yet to perform action
-        secondTouch = false
-        
         // check that tapped pin is a point annotation
         guard let annotation = view.annotation as? PointAnnotation else {
             print("\(#function) can't get the tapped annotation")

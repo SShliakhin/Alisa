@@ -17,25 +17,21 @@ extension MapViewController {
     ///   - touches: actual touches (not used)
     ///   - event: the event where the touches belong (not used)
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // if this is the second touch — perform action
-        if true /* secondTouch */ {
-            // check if we can get an action from the selected annotation
-            guard let action = (mapView.selectedAnnotations.first as? PointAnnotation)?.place.action else {
-                print("\(#function): can't unwrap action")
-                return
-            }
-            
-            // ask the user to wait as the next screen could take a while to load
-            navigationItem.title = "Подождите, пожалуйста..."
-            
-            // perform the action
-            action.perform(sender: self)
-            
-            // after the return show all pins
-            showAllPins()
-        } else {
-            // next touch would be the second touch
-            //secondTouch = true //зачем то Денис хотел со второго раза отрабатывать нажатие
+        
+        // check if we can get an action from the selected annotation
+        guard let action = (mapView.selectedAnnotations.first as? PointAnnotation)?.place.action else {
+            print("\(#function): can't unwrap action")
+            return
         }
+        
+        // ask the user to wait as the next screen could take a while to load
+        navigationItem.title = "Подождите, пожалуйста..."
+        
+        // perform the action
+        action.perform(sender: self)
+        
+        // after the return show all pins
+        showAllPins()
+        
     }
 }
